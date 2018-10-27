@@ -128,7 +128,7 @@ class B9y:
         url = self.endpoint + "/users"
         headers = {'Authorization': "Bearer:" + self.token, 'Content-Type':'application/json'}
         payload = {}
-        payload["email"] = username
+        payload["username"] = username
         payload["password"] = password
         response = requests.request("POST", url, json=payload, headers=headers)
 
