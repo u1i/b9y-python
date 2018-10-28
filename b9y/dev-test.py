@@ -36,4 +36,8 @@ print(users["users"])
 b9y.save()
 
 # Set admin password
-b9y.set_admin_password("bla")
+b9y.set_admin_password("changeme")
+
+# Create bin
+
+print(b9y.create_bin("my_list"))

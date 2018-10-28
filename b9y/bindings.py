@@ -162,6 +162,19 @@ class B9y:
         else:
             raise ValueError("ERROR (" + str(response.status_code) + ")")
 
+    def create_bin(self, list):
+        url = self.endpoint + "/bins"
+        headers = {'Authorization': "Bearer:" + self.token, 'Content-Type':'application/json'}
+        payload = {}
+        payload["list"] = list
+        response = requests.request("POST", url, json=payload, headers=headers)
+
+        if response.status_code == 200:
+            j = json.loads(response.text)
+            return(j["path"])
+        else:
+            raise ValueError("ERROR (" + str(response.status_code) + ")")
+
     def set_admin_password(self, new_pass):
         url = self.endpoint + "/config/admin"
         headers = {'Authorization': "Bearer:" + self.token, 'Content-Type':'application/json'}
