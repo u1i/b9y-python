@@ -2,7 +2,7 @@
 
 # b9y - Python Bindings for Bambleweeny
 
-A client implementation for [Bamblweeny](https://github.com/u1i/bambleweeny)
+A client implementation for [Bambleweeny](https://github.com/u1i/bambleweeny)
 
 ## Install
 pip install b9y
