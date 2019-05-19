@@ -55,15 +55,6 @@ class B9y:
         else:
             return(None)
 
-    def uget(self, key, userid):
-        url = self.endpoint + "/keys/" + str(key) + "?userid=" + str(userid)
-        headers = {'Authorization': "Bearer:" + self.token}
-        response = requests.request("GET", url, headers=headers)
-        if response.status_code == 200:
-            return(response.text)
-        else:
-            return(None)
-
     def keys(self, search=""):
         url = self.endpoint + "/keys"
         headers = {'Authorization': "Bearer:" + self.token}
