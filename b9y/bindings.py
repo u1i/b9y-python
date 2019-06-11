@@ -94,6 +94,17 @@ class B9y:
         else:
             raise ValueError("ERROR: key invalid or quota exceeded (" + str(response.status_code) + ")")
 
+
+    def delete(self, key):
+        url = self.endpoint + "/keys/" + key
+        headers = {'Authorization': "Bearer:" + self.token}
+        response = requests.request("DELETE", url, headers=headers)
+
+        if response.status_code == 200:
+            return(True)
+        else:
+            raise ValueError("ERROR: key invalid (" + str(response.status_code) + ")")
+
     def push(self, key, value):
         url = self.endpoint + "/lists/" + key
         headers = {'Authorization': "Bearer:" + self.token}

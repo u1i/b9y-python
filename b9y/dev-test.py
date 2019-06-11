@@ -41,3 +41,8 @@ b9y.set_admin_password("changeme")
 # Create bin
 
 print(b9y.create_bin("my_list"))
+
+print "Test delete"
+b9y.set('deleteme', 'hello')
+print b9y.get('deleteme')
+b9y.delete('deleteme')
